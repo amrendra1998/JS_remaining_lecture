@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project with Asynchronous JS </title>
+</head>
+<body>
+    <h1>chai aur Javascript  </h1>
+    <button id="start">Start</button>
+    <button id="stop">stop</button>
+</body>
+<script>
+    const myDate = function(str){
+        console.log(str, Date.now());
+        
+    }
+   
+    const intervalId = setInterval(myDate, 1000, "Hi")
+
+clearInterval(intervalId)
+
+let startbtn = document.getElementById("start")
+let stopbtn = document.getElementById("stop")
+// let timeDisplay = document.getElementById("timeDisplay")
+
+let seconds = 0;
+let timerId = null;
+
+startbtn.onclick = function () {
+    if (timerId == null) {
+        timerId = setInterval(() => {
+            seconds++;
+            console.log("Amrendra Kumar");
+            
+        }, 1000)
+    }
+};
+
+stopbtn.onclick = function() {
+    clearInterval(timerId);
+    timerId = null;
+}
+</script>
+</html>
